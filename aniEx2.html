@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aniEx2</title>
+    <style>
+      body{
+        margin: 0;
+        background-color: #000;
+        height: 100%;
+      }
+      .txt-wrapper{
+        text-align: center;
+      }
+      span{
+        font-size: 15rem;
+        color: #fff;        
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      }
+      span:hover{
+        text-shadow: -12px -12px  cadetblue,
+           12px 12px #aedb0a
+           ;
+        animation: ani1 0.2s infinite alternate;
+      }
+      @keyframes ani1 {
+        25%{
+          text-shadow:
+           -8px -6px  cadetblue,
+           5px 3px #aedb0a
+           ;
+        }
+        50%{
+          text-shadow: 8px -16px  rgb(9, 25, 243);
+        }
+        75%{
+          text-shadow: 4px 12px  rgb(104, 14, 96);
+        }
+        100%{
+          text-shadow: -18px -18px  red;
+        }
+        
+        
+      }
+    </style>
+</head>
+<body>
+  <div class="txt-wrapper">
+    <span>C</span>
+    <span>S</span>
+    <span>S</span>
+    <span>3</span>
+  </div>
+</body>
+</html>

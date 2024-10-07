@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aniEx3</title>
+    <style>
+      body{
+        margin: 0;
+       
+      }
+      .container{
+       
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        
+      }
+      .container .bicycle-wrapper{/* 자전거 전체 움직임 */
+        animation: move 4s infinite linear ;
+        position: relative;
+        z-index: 99;
+      }
+      .container .bicycle-wrapper:hover{
+        animation-play-state: paused;
+      }
+      
+      .container .bicycle-wrapper .bicycle-wheel{
+        animation: spin 3s infinite linear ;
+        position: absolute;
+        bottom: -89px;
+        left: -93px;
+        
+      }
+      .container .bicycle-wrapper .bicycle-wheel:last-child{
+        left:auto; /* 레프트값 초기화 */
+        right: -93px; /* 레프트값과 라이트값을 둘 다 주면 left 우선 적용 */
+      }
+      
+      .fireworks{
+        
+        margin: 10px 20px auto auto;
+        animation: fire 2s  infinite alternate ;
+        z-index: 9;
+       
+      }
+      
+
+      @keyframes fire {
+        from{
+          
+          opacity: 0;
+
+        }
+        to{
+          transform: scale(0.5) rotate(360deg) ;
+          opacity: 1;
+        }
+      
+      }
+      @keyframes move { /* 깜빡하면서 생기지 않고 자연스럽게 나타나게 하는 것은 화면 바깥에서 0%로 시작하고 화면 밖 100%으로 주면 된다. */
+        0%{
+          opacity: 0 ; transform: translateX(-10vw);
+        }
+        10%{
+          opacity: 1; transform: translateX(0);
+        }
+        80%{
+          opacity: 1; transform: translateX(100vw);
+        }
+        100%{
+          opacity:0 ; transform: translateX(110vw);
+        }
+      }
+      @keyframes spin {
+        100%{
+          transform: rotate(360deg);
+        }
+        
+      }
+     
+      
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="bicycle-wrapper">
+      <img src="./bicycle.png" alt="bicycle" class="bicycle-body">
+      <img src="./wheel.png" alt="자전거바퀴" class="bicycle-wheel">
+      <img src="./wheel.png" alt="자전거바퀴" class="bicycle-wheel">
+    </div>
+    <img src="./fireworks.png" alt="불꽃놀이" class="fireworks">
+
+    
+  </div>
+</body>
+</html>
